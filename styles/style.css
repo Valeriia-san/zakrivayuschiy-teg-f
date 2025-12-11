@@ -13,4 +13,214 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--text-font, sans-serif);
+  font-variation-settings: 'wght' var(--font-wght-text);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.block-width {
+  inline-size: var(--section-inline-size);
+}
+
+.header {
+  padding-block: 100px;
+}
+
+.header__cover {
+  background-color: #fff;
+  border: var(--border);
+  padding-block: var(--title-padding);
+  text-align: center;
+  margin-inline: auto;
+}
+
+.header__title {
+  font-family: var(--accent-font, sans-serif);
+  font-size: var(--title-font-size);
+  line-height: 100%;
+  font-weight: normal;
+  margin-block-end: 20px;
+}
+
+.header__subtitle {
+  font-family: var(--accent-font, sans-serif);
+  font-size: var(--subtitle-font-size);
+  line-height: 100%;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: #fff;
+  border: var(--border);
+  margin-inline: auto;
+}
+
+.card:not(:last-child) {
+  margin-block-end: 50px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--font-wght-title);
+  line-height: 22px;
+  padding: 4px 10px;
+}
+
+.card__image {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  font-family: var(--accent-font, sans-serif);
+  font-size: 14px;
+  line-height: 100%;
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  text-shadow: 0 0 var(--text-stroke);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
+  
+  .label {
+    -webkit-text-stroke: 1px var(--text-stroke);
+    text-stroke: 1px var(--text-stroke);
+    text-shadow: none;
+  }
+}
+
+.card__image img {
+  inline-size: 100%;
+}
+
+.card__description {
+  font-size: 18px;
+  line-height: 21px;
+  padding: 25px;
+}
+
+.card__description p {
+  margin-block-end: 25px;
+}
+
+button {
+  background-color: var(--button-color);
+  border: var(--border);
+  padding: 0;
+  font-family: var(--accent-font, sans-serif);
+  font-size: 14px;
+  line-height: 90%;
+  padding: 10.5px;
+}
+
+.button__text {
+  
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.card__icon-button {
+  border: none;
+  padding: 0;
+}
+
+.like-icon {
+  
+}
+
+.card__like-button {
+  border: var(--border);
+  inline-size: 130px;
+}
+
+.card__save-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 20px;
+  margin-inline: auto;
+  margin-block: 50px 100px;
+}
+
+.save-icon {
+  aspect-ratio: 1/1;
+}
+
+.card__save-button .save-icon {
+  inline-size: 28px;
+}
+
+.dialog {
+  position: fixed;
+  inset: 0;
+}
+
+.dialog[open] {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 30px 20px;
+  align-items: center;
+  padding: 30px 40px;
+  border: var(--border);
+  max-inline-size: 341px;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0 0 0 / 0.75);
+}
+
+.dialog .save-icon {
+  inline-size: 39px;
+  flex-shrink: 0;
+}
+
+.dialog p {
+  font-family: var(--accent-font, sans-serif);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog__button {
+  grid-column: 1 / -1;
+}
+
+@media (width<375px) {
+  .block-width {
+    min-inline-size: 320px;
+    inline-size: 100%;
+  }
+  
+  .header__title {
+    font-size: 45px;
+  }
+
+  .dialog[open] {
+    max-inline-size: 310px;
+  }
+}
+
+@media (width>=768px) {
+  .dialog[open] {
+    padding: 30px;
+    max-inline-size: 353px;
+  }
+
+  .card__save-button {
+    flex-direction: row;
+  }
+
+  .card__save-button .save-icon {
+    inline-size: 21px;
+  }
 }
