@@ -15,6 +15,6 @@
   --title-padding: clamp(7.625rem, 7.1479rem + 2.0356vw, 8.125rem);
   --border: 2px solid #000;
   --text-stroke: #fff;
-  --bg-color: #fff;
-  --button-color: #fff;
+  --main-color: #fff;
+  --accent-color: #000;
 }
