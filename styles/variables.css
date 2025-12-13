@@ -9,12 +9,14 @@
     repeating-linear-gradient(to right, #d3d3d3 0 2px, #d3d3d300 2px 4px),
     repeating-linear-gradient(#d3d3d3 0 2px, #d3d3d300 2px 4px),
     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --main-color: #fff;
+  --accent-color: #000;
+  --contour-color: #000;
+  --animation-fill-color: red;
+  --text-stroke: var(--main-color);
+  --border: 2px solid var(--accent-color);
   --section-inline-size: clamp(23.4375rem, 4.0553rem + 82.6972vw, 43.75rem);
   --title-font-size: clamp(3.0625rem, 2.1083rem + 4.0712vw, 4.0625rem);
   --subtitle-font-size: clamp(0.875rem, 0.3383rem + 2.2901vw, 1.4375rem);
   --title-padding: clamp(7.625rem, 7.1479rem + 2.0356vw, 8.125rem);
-  --border: 2px solid #000;
-  --text-stroke: #fff;
-  --main-color: #fff;
-  --accent-color: #000;
 }
