@@ -73,10 +73,16 @@
   position: relative;
 }
 
+.card__image img {
+  inline-size: 100%;
+  border-block: var(--border);
+}
+
 .label {
   position: absolute;
   font-family: var(--accent-font, sans-serif);
   font-size: 14px;
+  text-transform: uppercase;
   line-height: 100%;
   inset-inline-end: 25px;
   inset-block-start: 25px;
@@ -91,11 +97,36 @@
     -webkit-text-stroke: 1px var(--text-stroke);
     text-stroke: 1px var(--text-stroke);
     text-shadow: none;
+    z-index: 1;
   }
 }
 
-.card__image img {
-  inline-size: 100%;
+.sepia {
+  filter: sepia(30%);
+}
+
+.invert {
+  filter: invert(100%);
+}
+
+.saturate {
+  filter: saturate(135%);
+}
+
+.brightness {
+  filter: brightness(90%);
+}
+
+.blur {
+  filter: blur(1px);
+}
+
+.grayscale {
+  filter: grayscale(25%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(270deg) brightness(180%) contrast(120%);
 }
 
 .card__description {
@@ -142,10 +173,6 @@
 
 .card__icon-button:focus-visible {
   border: var(--border);
-}
-
-.like-icon {
-  
 }
 
 .contour {
