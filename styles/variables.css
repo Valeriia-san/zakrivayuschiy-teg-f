@@ -15,7 +15,7 @@
   --animation-fill-color: red;
   --text-stroke: var(--main-color);
   --border: 2px solid var(--accent-color);
-  --section-inline-size: clamp(23.4375rem, 4.0553rem + 82.6972vw, 43.75rem);
+  --section-size: clamp(23.4375rem, 4.0553rem + 82.6972vw, 43.75rem);
   --title-font-size: clamp(3.0625rem, 2.1083rem + 4.0712vw, 4.0625rem);
   --subtitle-font-size: clamp(0.875rem, 0.3383rem + 2.2901vw, 1.4375rem);
   --title-padding: clamp(7.5rem, 7.0229rem + 2.0356vw, 8rem);
