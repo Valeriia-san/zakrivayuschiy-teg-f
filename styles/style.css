@@ -37,16 +37,16 @@
   background-color: var(--main-color, #fff);
 }
 
-.header__title {
+.header__logo {
   margin-block-end: 20px;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-weight: normal;
   font-size: var(--title-font-size);
   line-height: 100%;
 }
 
-.header__subtitle {
-  font-family: var(--accent-font, sans-serif);
+.header__title {
+  font-family: var(--accent-font, fantasy);
   font-weight: normal;
   font-size: var(--subtitle-font-size);
   line-height: 100%;
@@ -82,19 +82,23 @@
 .label {
   position: absolute;
   opacity: 0.5;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   line-height: 100%;
   text-transform: uppercase;
-  text-shadow: 0 0 var(--text-stroke, #fff);
+  text-shadow: 
+    -1px 0 var(--text-stroke, #fff),
+    0 1px var(--text-stroke, #fff),
+    1px 0 var(--text-stroke, #fff),
+    0 -1px var(--text-stroke, #fff);
   inset-inline-end: 25px;
   inset-block-start: 25px;
   mix-blend-mode: hard-light;
+  z-index: 1;
 }
 
 @supports ((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
   .label {
-    z-index: 1;
     text-shadow: none;
     -webkit-text-stroke: 1px var(--text-stroke, #fff);
     text-stroke: 1px var(--text-stroke, #fff);
@@ -142,7 +146,7 @@
 .button {
   border: var(--border);
   padding: 0;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   line-height: 90%;
   background-color: var(--main-color, #fff);
@@ -295,30 +299,34 @@
 }
 
 .dialog p {
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
 }
 
-.dialog__button {
-  position: relative;
+.dialog__close {
   grid-column: 1 / -1;
+}
+
+.dialog__close-button {
+  inline-size: 100%;
   padding-block: 9px;
+  position: relative;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
 
 .card__like-button:focus,
 .card__save-button:focus,
-.dialog__button:focus {
+.dialog__close-button:focus {
   box-shadow: 2px 2px 0 var(--accent-color, #000);
   outline: none;
 }
 
 .card__like-button::before,
 .card__save-button::before,
-.dialog__button::before {
+.dialog__close-button::before {
   content: "";
   position: absolute;
   background-color: var(--accent-color, #000);
@@ -332,7 +340,7 @@
 
 .card__like-button:hover::before,
 .card__save-button:hover::before,
-.dialog__button:hover::before {
+.dialog__close-button:hover::before {
   translate: 0;
 }
 
