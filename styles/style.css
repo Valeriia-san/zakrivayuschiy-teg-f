@@ -38,7 +38,6 @@
 }
 
 .header__logo {
-  margin-block-end: 20px;
   font-family: var(--accent-font, fantasy);
   font-weight: normal;
   font-size: var(--title-font-size);
@@ -46,6 +45,7 @@
 }
 
 .header__title {
+  margin-block-start: 17px;
   font-family: var(--accent-font, fantasy);
   font-weight: normal;
   font-size: var(--subtitle-font-size);
@@ -150,10 +150,34 @@
   font-size: 14px;
   line-height: 90%;
   background-color: var(--main-color, #fff);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  box-shadow: 2px 2px 0 var(--accent-color, #000);
+  outline: none;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  background-color: var(--accent-color, #000);
+  transition: translate 0.5s ease-in-out;
+  inline-size: 100%;
+  block-size: 100%;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  translate: -100%;
 }
 
 .button:hover {
   cursor: pointer;
+}
+
+.button:hover::before {
+  translate: 0;
 }
 
 .button__text {
@@ -166,10 +190,13 @@
   display: grid;
   grid-template-columns: 38px 130px;
   justify-content: end;
-  gap: 12px;
+  gap: 7px;
 }
 
 .card__icon-button {
+  max-block-size: 38px;
+  background-color: var(--main-color, #fff);
+  padding: 0;
   justify-self: center;
   border: 2px solid transparent;
   transition: border 0.3s ease;
@@ -244,15 +271,10 @@
 }
 
 .card__like-button {
-  position: relative;
-  border: var(--border);
   padding-block: 10.5px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
 }
 
 .card__save-button {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -260,8 +282,6 @@
   margin-inline: auto;
   margin-block: 50px 100px;
   padding: 15px 20px;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
 }
 
 .save-icon {
@@ -312,36 +332,6 @@
 .dialog__close-button {
   inline-size: 100%;
   padding-block: 9px;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-}
-
-.card__like-button:focus,
-.card__save-button:focus,
-.dialog__close-button:focus {
-  box-shadow: 2px 2px 0 var(--accent-color, #000);
-  outline: none;
-}
-
-.card__like-button::before,
-.card__save-button::before,
-.dialog__close-button::before {
-  content: "";
-  position: absolute;
-  background-color: var(--accent-color, #000);
-  transition: translate 0.5s ease-in-out;
-  inline-size: 100%;
-  block-size: 100%;
-  inset-inline-start: 0;
-  inset-block-start: 0;
-  translate: -100%;
-}
-
-.card__like-button:hover::before,
-.card__save-button:hover::before,
-.dialog__close-button:hover::before {
-  translate: 0;
 }
 
 @media (width<375px) {
@@ -350,7 +340,7 @@
     inline-size: 100%;
   }
 
-  .header__title {
+  .header__logo {
     font-size: 45px;
   }
 
