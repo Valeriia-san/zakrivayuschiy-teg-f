@@ -22,7 +22,7 @@
 }
 
 .block-width {
-  inline-size: var(--section-inline-size);
+  inline-size: var(--section-size);
 }
 
 .header {
@@ -72,10 +72,11 @@
 
 .card__image {
   position: relative;
+  border-block: var(--border);
+  line-height: 0;
 }
 
 .card__image img {
-  border-block: var(--border);
   inline-size: 100%;
 }
 
